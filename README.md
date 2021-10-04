@@ -12,7 +12,9 @@ npm run build
 
 
 부모 -> 자식 parameter 전달
+
 app.vue
+```
   <first-region
     v-if="showCalendar"
     :data="item"
@@ -24,33 +26,22 @@ app.vue
     v-else
   ></your-component>
   
-  
   <v-btn @click="show">캘린더</v-btn>
-  
-  ...
-  
+
   data: () => ({
     item = ['parents', child'], 
     parameter = ['key': "value" ], 
     showCalendar = false, 
     events: [],
   }),
-  
-  ...
-  
   methods: {
-    getEvents(event) {
-      console.log(event);
-      this.events = event
-    },
     show() {
       this.showCalendar = true;
     },
   
-  
-  
-  
+```  
 FirstRegion.vue
+```
     export default {
     name: 'eastlight',
     props: ['data', 'para'],
@@ -73,7 +64,7 @@ FirstRegion.vue
         
         ...
     
-    
+ ```
  v-if 
   if 조건에 따라 실행
   조건에 맞지 않으면 해당 컴포넌트 생성 x 
