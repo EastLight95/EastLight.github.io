@@ -1,24 +1,11 @@
-# polio
+로컬 vue 프로젝트 생성
+vue create project 
+vue add vuetify
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
+로컬호스트 실행
 npm run serve
-```
 
-### Compiles and minifies for production
-```
+dist 파일 생성
 npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+나머지는 인터넷^^
