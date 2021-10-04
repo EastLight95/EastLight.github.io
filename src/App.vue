@@ -1,60 +1,60 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+    <v-app-bar app color="primary" dark>
+      <div>gi</div>
     </v-app-bar>
 
     <v-main>
-      <HelloWorld/>
+      <v-card>
+        <east-light></east-light>
+      </v-card>
+
+      <v-row>
+        <v-spacer></v-spacer>
+        <v-col cols="6">
+          <v-text-field
+            v-model="getLabel"
+          ></v-text-field>
+        </v-col>
+        <v-spacer></v-spacer>
+      </v-row>
+      
+      <first-region
+        @parse="getEvents"
+      ></first-region>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import EastLight from './components/EastLight'
+import FirstRegion from './components/FirstRegion'
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    EastLight,
+    FirstRegion
   },
 
   data: () => ({
-    //
+    events: [],
   }),
+  computed: {
+    getLabel() {
+      let text = '';
+      this.events.map(e => {
+        text += e.name + " ";
+      });
+      return text;
+    }
+  },
+  methods: {
+    getEvents(event) {
+      console.log(event);
+      this.events = event
+    },
+  }
 };
 </script>
