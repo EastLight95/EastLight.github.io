@@ -14,25 +14,25 @@ npm run build
 부모 -> 자식 parameter 전달
 app.vue
   <first-region
-    v-if="showCalendar"               ****************
-    :data="item"                      ****************
-    :para="parameter"                 ****************
+    v-if="showCalendar"
+    :data="item"
+    :para="parameter"
     @parse="getEvents"
   ></first-region>
   
-  <your-component                     ****************
-    v-else                            ****************
-  ></your-component>                  ****************
+  <your-component
+    v-else
+  ></your-component>
   
   
-  <v-btn @click="show">캘린더</v-btn> ****************
+  <v-btn @click="show">캘린더</v-btn>
   
   ...
   
   data: () => ({
-    item = ['parents', child'],       ****************
-    parameter = ['key': "value" ],       ****************
-    showCalendar = false,             ****************
+    item = ['parents', child'], 
+    parameter = ['key': "value" ], 
+    showCalendar = false, 
     events: [],
   }),
   
@@ -43,9 +43,9 @@ app.vue
       console.log(event);
       this.events = event
     },
-    show() {                          ****************
-      this.showCalendar = true;       ****************
-    },                                ****************
+    show() {
+      this.showCalendar = true;
+    },
   
   
   
@@ -53,7 +53,7 @@ app.vue
 FirstRegion.vue
     export default {
     name: 'eastlight',
-    props: ['data', 'para'],                  ****************
+    props: ['data', 'para'],
     
     data: () => ({
       value: '',
@@ -64,9 +64,9 @@ FirstRegion.vue
     }),
     
     
-    create: {                                 ****************
-      console.log(this.data);                 ****************
-    },                                        ****************
+    create: { 
+      console.log(this.data);
+    }, 
     
     computed: {
       getType() {
